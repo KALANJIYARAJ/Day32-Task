@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "..//node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./css/sb-admin-2.css";
@@ -8,8 +7,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PortalLayout from "./PortalLayout";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import { useContext } from "react";
-import { UserContext } from "./UserContext";
 import Books from "./Books/Books";
 import Members from "./Members/Members";
 import CreateMember from "./Members/CreateMember";
@@ -21,7 +18,6 @@ import CreateAccount from "./Login/CreateAccount";
 import GetBook from "./Books/GetBook";
 
 function App() {
-  const { user } = useContext(UserContext);
   return (
     <BrowserRouter>
       <Routes>

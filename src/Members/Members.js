@@ -36,30 +36,30 @@ function Members() {
     }
   }
   return (
-    <div class="container-fluid">
-      <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-2 text-gray-800">Members</h1>
+    <div className="container-fluid">
+      <div className="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 className="h3 mb-2 text-gray-800">Members</h1>
         {user.enable ?
         <Link
           to={"/portal/member/create"}
-          class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+          className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
         >
-          <i class="fas fa-download fa-sm text-white-50"></i> Create Member
+          <i className="fas fa-download fa-sm text-white-50"></i> Create Member
         </Link> : null}
       </div>
 
       { isLoading ? 
-      <div class="spinner-border text-primary" role="status">
-  <span class="sr-only">Loading...</span>
+      <div className="spinner-border text-primary" role="status">
+  <span className="sr-only">Loading...</span>
       </div> :
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">members Data</h6>
+      <div className="card shadow mb-4">
+        <div className="card-header py-3">
+          <h6 className="m-0 font-weight-bold text-primary">members Data</h6>
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
+        <div className="card-body">
+          <div className="table-responsive">
             <table
-              class="table table-bordered"
+              className="table table-bordered"
               id="dataTable"
               width="100%"
               cellspacing="0"
