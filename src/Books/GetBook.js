@@ -7,7 +7,7 @@ import { UserContext } from "../UserContext";
 
 function GetBook() {
   const {user,setUser} = useContext(UserContext);
-  const [id, setId] = useState();
+  const [id1, setId] = useState();
   const navigate = useNavigate();
   const params = useParams();
   const formik = useFormik({
@@ -46,7 +46,7 @@ function GetBook() {
     onSubmit: async (values) => {
       try {
          await axios.put(
-          `https://6374714408104a9c5f8031bc.mockapi.io/Member/2`,
+          `https://6374714408104a9c5f8031bc.mockapi.io/Member/${id1}`,
           values
         );
         alert("Success");
@@ -61,17 +61,13 @@ function GetBook() {
   useEffect(() => {
     let fetchData = async () =>{
       try{
-        // const user1 = await axios.get(`https://6374714408104a9c5f8031bc.mockapi.io/Member`)
-        
-        //error
+        const user1 = await axios.get(`https://6374714408104a9c5f8031bc.mockapi.io/Member`)
+        console.log(user.username);
+        let index = user1.data.findIndex((p)=>p.email == user.username)
+        setId(index+1);
+        console.log(id1);
 
-        // let index = user1.data.findIndex(() => user1.data.email == user.username)
-        // console.log(index);
-        // setId(index+1);
-
-        const findUser = await axios.get(`https://6374714408104a9c5f8031bc.mockapi.io/Member/2`)
-        // console.log(findUser.data);
-        // formik.setValues(findUser.data)
+        const findUser = await axios.get(`https://6374714408104a9c5f8031bc.mockapi.io/Member/${index+1}`)
         formik.setFieldValue("name",findUser.data.name)
         formik.setFieldValue("email",findUser.data.email)
         formik.setFieldValue("issue_date",findUser.data.issue_date)

@@ -33,7 +33,6 @@ function App() {
           <Route path="members" element={<Members/>}></Route>
           <Route path="member/create" element={<CreateMember/>}></Route>
           <Route path="member/edit/:id" element={<EditMember/>}></Route>
-          <Route path="forget" element={<Forgot/>}></Route>
           <Route path="getbook/:id" element={<GetBook/>}></Route>
         </Route>
       </Routes>
